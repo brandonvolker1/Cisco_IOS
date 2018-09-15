@@ -1,18 +1,18 @@
     ---
     -	name: Show version and other user level commands
     	hosts: routers					  		
-	gather_facts:  false
+        gather_facts:  false
 
-	tasks:
-	  - name: run multiple commands on remote nodes
+        tasks:
+          - name: run multiple commands on remote nodes
             ios_command:
-	      commands:
+              commands:
                 - show version
                 - show ip int brief
 
-	    register: print_output
+            register: print_output
 
-	  - debug: var=print_output.stdout_lines
+          - debug: var=print_output.stdout_lines
      
           - name: saveoutput to file
             copy: content="{{ print_output.stdout[0] }}" dest="/root/output/{{ inventory_hostname }}.txt"
