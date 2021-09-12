@@ -124,7 +124,7 @@
 
           - no ip dhcp snooping information option 
           - ip dhcp snooping
-          - "ip arp inspection vlan 100,101"
+          - "ip arp inspection vlan 100,101,102"
           - spanning-tree portfast bpduguard default
 
 
